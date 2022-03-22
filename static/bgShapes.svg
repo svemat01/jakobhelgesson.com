@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="343" height="609" fill="none" viewBox="0 0 343 609">
+  <path fill="#323232" fill-opacity=".7" d="M343 0v73c0 6.627-5.373 12-12 12h-55c-6.627 0-12-5.373-12-12V0h79zM91 0v26c0 6.627-5.373 12-12 12H0V0h91z"/>
+  <rect width="112" height="51" x="168" y="46" fill="#323232" fill-opacity=".7" rx="12" transform="rotate(90 168 46)"/>
+  <path fill="#323232" fill-opacity=".7" d="M240 0v67c0 6.627-5.373 12-12 12h-27c-6.627 0-12-5.373-12-12V0h51z"/>
+  <rect width="152" height="51" x="102" y="113" fill="#323232" fill-opacity=".7" rx="12" transform="rotate(90 102 113)"/>
+  <rect width="152" height="51" x="162" y="195" fill="#323232" fill-opacity=".7" rx="12" transform="rotate(90 162 195)"/>
+  <path fill="#323232" fill-opacity=".7" d="M13 457c6.627 0 12 5.373 12 12v128c0 6.627-5.373 12-12 12H0V457h13zM23 270c6.627 0 12 5.373 12 12v128c0 6.627-5.373 12-12 12H0V270h23zM5 65c6.627 0 12 5.373 12 12v128c0 6.627-5.373 12-12 12H0V65h5z"/>
+  <rect width="112" height="51" x="245" y="84.999" fill="#323232" fill-opacity=".7" rx="12" transform="rotate(90 245 85)"/>
+</svg>

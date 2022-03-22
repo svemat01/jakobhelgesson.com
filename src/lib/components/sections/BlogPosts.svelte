@@ -12,19 +12,19 @@ import PostCard from './BlogPosts/PostCard.svelte';
             title: 'The first post',
             date: '2020-01-01',
             description: 'This is the first post',
-            path: '/blog/first-post',
+            path: 'https://helgesson.dev/blog/first-post',
         },
         {
             title: 'The second post',
             date: '2020-01-02',
             description: 'This is the second post',
-            path: '/blog/second-post',
+            path: 'https://helgesson.dev/blog/second-post',
         },
         {
             title: 'The third post',
             date: '2020-01-03',
             description: 'This is the third post',
-            path: '/blog/third-post',
+            path: 'https://helgesson.dev/blog/third-post',
         },
     ];
 </script>

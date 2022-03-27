@@ -6,7 +6,7 @@
             Helgesson</span
         >
     </h1>
-    <h2>A super stack developer</h2>
+    <h2>A super stack developer <br>THIS WEBSITE IS W.I.P</h2>
 </div>
 
 <style lang="scss">

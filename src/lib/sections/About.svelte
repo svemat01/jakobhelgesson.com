@@ -1,9 +1,7 @@
 <script lang="ts">
-    import Fa from 'svelte-fa/src/fa.svelte'
-
+    import { faGithub, faLinkedin,faTwitter } from '@fortawesome/free-brands-svg-icons';
     import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
-    import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+    import Fa from 'svelte-fa/src/fa.svelte'
 </script>
 
 <section class="aboutSection" id="about">

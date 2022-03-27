@@ -1,42 +1,32 @@
 <script lang="ts">
-    export let name: string;
+    export let title: string;
     export let description: string;
-    export let path: string;
-    export let lang: string;
+    export let icon: string;
 
     export let expanded = false;
     export let onClick: () => void;
 
-    export let expandedData: {
-        description: string;
-    };
-
     export let style: string = '';
 </script>
 
-<div {style} on:click={onClick} class={expanded ? 'expanded' : ''}>
-    <h2
-        on:click={(e) => {
-            e.preventDefault();
-            location.href = path;
-        }}
-    >
-        {name}
-    </h2>
+<article {style} on:click={onClick} class={expanded ? 'expanded' : ''}>
+    <div class="main">
+        <img class="icon" src={icon} alt={title}>
+        <h2>
+            {title}
+        </h2>
+    </div>
     <!-- <p class="content">{@html expanded ? expandedContent : content}</p> -->
     {#if expanded}
-        <p class="content">{@html expandedData.description}</p>
-    {:else}
-        <p class="content">{description}</p>
+        <p class="content">{@html description}</p>
     {/if}
-    <p class="lang">{lang}</p>
-</div>
+</article>
 
 <style lang="scss">
-    div {
+    article {
         /* max-width: 25rem; */
         /* margin-top: 2rem; */
-        padding: 1.8rem 2rem;
+        padding: 1.25rem 1.5rem;
 
         background: $gray-color;
 
@@ -56,9 +46,16 @@
             grid-row: span 2; */
         }
 
-        h2 {
-            color: $accent-color;
-            font-size: 2.2rem;
+        // --------------------------------------------------
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            h2 {
+            color: $light-color;
+            font-size: 2rem;
             font-weight: 600;
 
             width: fit-content;
@@ -67,6 +64,9 @@
                 filter: brightness(0.8);
             }
         }
+        }
+
+        // --------------------------------------------------
 
         .content {
             font-size: 1.6rem;
@@ -76,20 +76,12 @@
 
             flex: 1;
         }
+    }
 
-        .lang {
-            font-size: 1.5rem;
+    .icon {
+        aspect-ratio: 1;
+        max-width: 3.5rem;
 
-            width: max-content;
-
-            padding: 0.2rem 0.5rem;
-            /* margin-top: auto; */
-            margin-top: 0.5rem;
-
-            border-radius: 0.5rem;
-
-            background: var(--bg-color, #fafafa);
-            color: var(--color, $light-color);
-        }
+        margin-right: 1rem;
     }
 </style>

@@ -6,8 +6,9 @@
     export let date: string;
     export let path: string;
 
-    let formatedDate = formatDate(date);
+    const formatedDate = formatDate(date);
 </script>
+
 
 <article on:click={() => (location.href = path)}>
     <div class="top">

@@ -1,14 +1,13 @@
 <script lang="ts">
+    import BackgroundShapes from '$components/BackgroundShapes.svelte';
     import Container from '$components/Container.svelte';
-    import Projects from '$components/sections/Projects.svelte';
     import NavBar from '$components/NavBar.svelte';
     import SmallerContainer from '$components/SmallerContainer.svelte';
-
-    import Intro from '$components/sections/Intro.svelte';
-    import About from '$components/sections/About.svelte';
-    
-    import BackgroundShapes from '$components/BackgroundShapes.svelte';
-import BlogPosts from '$components/sections/BlogPosts.svelte';
+    import About from '$sections/About.svelte';
+    import BlogPosts from '$sections/BlogPosts.svelte';
+    import Intro from '$sections/Intro.svelte';
+    import Projects from '$sections/Projects.svelte';
+    import Skills from '$sections/Skills.svelte';
 </script>
 
 <svelte:head>
@@ -34,6 +33,7 @@ import BlogPosts from '$components/sections/BlogPosts.svelte';
             <About />
             <Projects />
             <BlogPosts />
+            <Skills />
         </div>
     </div>
 </Container>

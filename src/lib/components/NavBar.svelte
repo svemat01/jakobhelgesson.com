@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { navLinks } from '$data/nav';
-    import { onMount } from 'svelte';
+    
     import { page } from '$app/stores';
+    import { navLinks } from '$data/nav';
 
     // onMount(() => {
     //     const sections = document.querySelectorAll("section");

@@ -3,10 +3,17 @@
     import IconCard from '$lib/components/IconCard.svelte';
 
     import reactIcon from '$lib/assets/icons/react.png';
-
-    import typescriptIcon from '$lib/assets/icons/typescript.svg';
+    import styledComponentsIcon from '$lib/assets/icons/styled-components.png';
+    import svelteIcon from '$lib/assets/icons/svelte.svg';
+    import nodeJsIcon from '$lib/assets/icons/nodejs.png';
+    import kubernetesIcon from '$lib/assets/icons/kubernetes.svg';
 
     import gitIcon from '$lib/assets/icons/git.svg';
+    import dockerIcon from '$lib/assets/icons/docker.png';
+
+    import typescriptIcon from '$lib/assets/icons/typescript.svg';
+    import javascriptIcon from '$lib/assets/icons/javascript.svg';
+    import javaIcon from '$lib/assets/icons/java.svg';
 
     const skills: {
         technologies: {
@@ -32,6 +39,29 @@
                     "I've used React for the frontend for a number of projects, including a printer monitor for my school's IT Admins",
                 icon: reactIcon
             },
+            {
+                title: 'Styled Components',
+                description:
+                    'I use styled-components for styling react components in an easy to use way',
+                icon: styledComponentsIcon
+            },
+            {
+                title: 'Svelte',
+                description: 'I use Svelte for the frontend of my projects',
+                icon: svelteIcon
+            },
+            {
+                title: 'Node.js',
+                description:
+                    'I use Node.js for the backend of my projects, including a printer monitor for my school\'s IT Admins',
+                icon: nodeJsIcon
+            },
+            {
+                title: 'Kubernetes',
+                description:
+                    'I use Kubernetes to deploy my projects to a cluster of servers',
+                icon: kubernetesIcon
+            }
 
         ],
         languages: [
@@ -40,6 +70,18 @@
                 description:
                     "I've used TypeScript for the frontend of my projects, and I've used it for the backend of my projects as well.",
                 icon: typescriptIcon
+            },
+            {
+                title: 'JavaScript',
+                description:
+                    'I mostly use typescript but I am also familiar with JavaScript',
+                icon: javascriptIcon
+            },
+            {
+                title: 'Java',
+                description:
+                    'I\'m familiar with Java, but I am yet to use it any projects',
+                icon: javaIcon
             }
         ],
         tools: [
@@ -48,6 +90,12 @@
                 description:
                     "I've used Git for version control for my projects.",
                 icon: gitIcon
+            },
+            {
+                title: 'Docker',
+                description:
+                    'I use Docker to build my projects to work everywhere',
+                icon: dockerIcon
             }
         ]
     };

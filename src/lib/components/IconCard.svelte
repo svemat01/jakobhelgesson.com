@@ -52,6 +52,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            height: 100%;
 
             h2 {
             color: $light-color;
@@ -79,7 +80,7 @@
     }
 
     .icon {
-        aspect-ratio: 1;
+        aspect-ratio: initial;
         max-width: 3.5rem;
 
         margin-right: 1rem;

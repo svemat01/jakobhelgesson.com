@@ -3,7 +3,7 @@
 </script>
 
 <div>
-    <Title />
+    <Title preTitle={"Hey there, I'm"} title={"Jakob Helgesson"} subTitle={"A Super Stack Developer"} />
     <img src="/jakobhelgesson-outline.png" alt="Me" class="image" />
 </div>
 

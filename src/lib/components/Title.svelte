@@ -1,12 +1,17 @@
+<script lang="ts">
+    export let preTitle: string;
+    export let title: string;
+    export let subTitle: string = undefined
+</script>
+
 <div>
     <h1>
-        Hey there, I'm <br />
-        <span
-            >Jakob <br />
-            Helgesson</span
-        >
+        {preTitle}<br />
+        <span>{title}</span>
     </h1>
-    <h2>A super stack developer <br>THIS WEBSITE IS W.I.P</h2>
+    {#if subTitle}
+        <h2>{subTitle}</h2>
+    {/if}
 </div>
 
 <style lang="scss">

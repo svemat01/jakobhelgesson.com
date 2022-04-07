@@ -9,10 +9,12 @@
 
 <style lang="scss">
     div {
+        display: flex;
+        
+        justify-content: space-between;
+
         margin-top: 4rem;
         width: 57%;
-        display: flex;
-        justify-content: space-between;
 
         @media screen and (max-width: 500px) {
             display: block;

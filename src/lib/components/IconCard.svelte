@@ -1,25 +1,17 @@
 <script lang="ts">
     export let title: string;
-    export let description: string;
     export let icon: string;
-
-    export let expanded = false;
-    export let onClick: () => void;
 
     export let style: string = '';
 </script>
 
-<article {style} on:click={onClick} class={expanded ? 'expanded' : ''}>
+<article {style}>
     <div class="main">
         <img class="icon" src={icon} alt={title}>
         <h2>
             {title}
         </h2>
     </div>
-    <!-- <p class="content">{@html expanded ? expandedContent : content}</p> -->
-    {#if expanded}
-        <p class="content">{@html description}</p>
-    {/if}
 </article>
 
 <style lang="scss">
@@ -34,17 +26,6 @@
 
         display: flex;
         flex-direction: column;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &.expanded {
-            border: $accent-color solid 0.4rem;
-
-            /* grid-column: span 2;
-            grid-row: span 2; */
-        }
 
         // --------------------------------------------------
 

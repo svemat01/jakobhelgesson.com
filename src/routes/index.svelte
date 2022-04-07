@@ -32,7 +32,7 @@
         <div class="mainContainer">
             <About />
             <Projects />
-            <BlogPosts />
+            <!-- <BlogPosts /> -->
             <Skills />
         </div>
     </div>

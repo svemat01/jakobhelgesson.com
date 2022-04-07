@@ -8,30 +8,25 @@
         textColor?: string;
     }[];
 
-    export let expanded = false;
-    export let onClick: () => void;
-
-    export let expandedData: {
-        content: string;
-    };
-
     export let style: string = '';
 </script>
 
-<div {style} on:click={onClick} class={expanded ? 'expanded main' : 'main '}>
+<div {style} class="main">
     <h2>
         <a href={path} target="_blank">{name}</a>
     </h2>
-    <!-- <p class="content">{@html expanded ? expandedContent : content}</p> -->
-    {#if expanded}
-        <p class="content">{@html expandedData.content}</p>
-    {:else}
-        <p class="content">{description}</p>
-    {/if}
+    <p class="content">{description}</p>
 
     <div class="langs">
         {#each langs as lang}
-            <p class="lang" style="--bg-color: {lang.color}; {lang.textColor ? `--color: ${lang.textColor}` : ''}">{lang.name}</p>
+            <p
+                class="lang"
+                style="--bg-color: {lang.color}; {lang.textColor
+                    ? `--color: ${lang.textColor}`
+                    : ''}"
+            >
+                {lang.name}
+            </p>
         {/each}
     </div>
 </div>
@@ -48,18 +43,6 @@
 
         display: flex;
         flex-direction: column;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &.expanded {
-            border: $accent-color solid 0.4rem;
-
-            grid-column: 1/-1;
-            /* order: -1; */
-            /* grid-row: span 2; */
-        }
 
         h2 {
             color: $accent-color;

@@ -1,7 +1,7 @@
 <script lang="ts">
     import SectionTitle from '$components/SectionTitle.svelte';
     import { projects } from '$lib/data/projects';
-    import ProjectCard from '$sections/Projects/ProjectCard.svelte';
+    import ProjectCard from './ProjectCard.svelte';
 </script>
 
 <section id="projects">

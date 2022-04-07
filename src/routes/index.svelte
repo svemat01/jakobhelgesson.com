@@ -3,11 +3,12 @@
     import Container from '$components/Container.svelte';
     import NavBar from '$components/NavBar.svelte';
     import SmallerContainer from '$components/SmallerContainer.svelte';
-    import About from '$sections/About.svelte';
-    import BlogPosts from '$sections/BlogPosts.svelte';
-    import Intro from '$sections/Intro.svelte';
-    import Projects from '$sections/Projects.svelte';
-    import Skills from '$sections/Skills.svelte';
+
+    import About from '$modules/Homepage/About.svelte';
+    import BlogPosts from '$modules/Homepage/BlogPosts/BlogPosts.svelte';
+    import Intro from '$modules/Homepage/Intro.svelte';
+    import Projects from '$modules/Homepage/Projects/Projects.svelte';
+    import Skills from '$modules/Homepage/Skills.svelte';
 </script>
 
 <svelte:head>
@@ -32,7 +33,7 @@
         <div class="mainContainer">
             <About />
             <Projects />
-            <!-- <BlogPosts /> -->
+            <BlogPosts />
             <Skills />
         </div>
     </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
     import SectionTitle from '$components/SectionTitle.svelte';
 
-    import PostCard from './BlogPosts/PostCard.svelte';
+    import PostCard from './PostCard.svelte';
 
     const baseurl = 'https://www.helgesson.dev';
 

@@ -20,8 +20,8 @@
 			"$static/*": [
 				"static/*"
 			],
-			"$sections/*": [
-				"src/lib/sections/*"
+			"$modules/*": [
+				"src/lib/modules/*"
 			]
 		}
 	}

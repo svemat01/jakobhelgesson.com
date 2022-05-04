@@ -1,5 +1,5 @@
-export const formatDate = (date: Date | string): string => {
-    if (typeof date === 'string') {
+export const formatDate = (date: Date | string | number): string => {
+    if (typeof date === 'string' || typeof date === 'number') {
         date = new Date(date);
     }
 

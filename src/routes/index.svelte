@@ -1,3 +1,26 @@
+<script context="module" lang="ts">
+    import type { PostWithMeta } from '$lib/types/Post.type';
+
+    import type { Load } from '@sveltejs/kit';
+
+    export const load: Load = async ({ fetch }) => {
+        let posts: PostWithMeta[] | undefined;
+        const url = 'https://blog.helgesson.dev/posts.json'
+
+        try {
+            posts = await fetch(url).then((res) =>
+                res.clone().json()
+            );
+
+            posts = posts.slice(0, 3);
+        } catch {
+            console.error(`Could not load blogposts! please check url: ${url}`)
+        }
+
+        return { props: { posts } };
+    };
+</script>
+
 <script lang="ts">
     import BackgroundShapes from '$components/BackgroundShapes.svelte';
     import Container from '$components/Container.svelte';
@@ -9,6 +32,8 @@
     import Intro from '$modules/Homepage/Intro.svelte';
     import Projects from '$modules/Homepage/Projects/Projects.svelte';
     import Skills from '$modules/Homepage/Skills.svelte';
+
+    export let posts: PostWithMeta[] | undefined;
 </script>
 
 <svelte:head>
@@ -33,7 +58,9 @@
         <div class="mainContainer">
             <About />
             <Projects />
-            <BlogPosts />
+            {#if posts}
+                <BlogPosts {posts} />
+            {/if}
             <Skills />
         </div>
     </div>

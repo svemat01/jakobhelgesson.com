@@ -1,1 +1,36 @@
-/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    color-scheme: dark;
+}
+
+html {
+    font-size: 62.5%;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $black;
+    color: $white;
+
+    font-family: 'Inter', sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}

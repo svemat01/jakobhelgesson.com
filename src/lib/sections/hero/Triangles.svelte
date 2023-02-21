@@ -17,7 +17,7 @@
 
 <style lang="scss">
 	.triangles {
-		@media screen and (min-width: 900px) {
+		@media screen and (min-width: 900px) and (max-width: 1599px) {
 			position: static;
 			height: 64px;
 			width: 100%;

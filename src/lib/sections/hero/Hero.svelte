@@ -1,6 +1,6 @@
 <script lang="ts">
-	import jakob from '../lib/assets/jakob.png';
-	import divider from '../lib/assets/divider.svg';
+	import jakob from '$lib/assets/jakob.png';
+	import divider from '$lib/assets/divider.svg';
 </script>
 
 <div class="hero">

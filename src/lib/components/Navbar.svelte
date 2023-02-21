@@ -15,15 +15,15 @@
 		},
 		{
 			label: 'About',
-			href: '/about'
+			href: '/#'
 		},
 		{
 			label: 'Projects',
-			href: '/projects'
+			href: '/#'
 		},
 		{
 			label: 'Contact',
-			href: '/contact'
+			href: '/#'
 		}
 	];
 
@@ -43,27 +43,53 @@
 		const mediaListener = window.matchMedia('(max-width: 767px)');
 
 		mediaListener.addEventListener('change', mediaQueryHandler);
+
+		navbarListHeight = navbarList.offsetHeight;
+
+		document.addEventListener('resize', () => {
+			navbarListHeight = navbarList.offsetHeight;
+			console.log({ navbarListHeight });
+		});
 	});
+
+	let navbarList: HTMLElement;
+	let navbarListHeight: number;
 </script>
 
 <nav>
 	<div class="container">
-		<div class="main">
-			<a href="/" class="brand">
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div class="main" on:click={handleMobileIconClick}>
+			<p
+				class="brand"
+				on:click={(e) => {
+					e.stopPropagation();
+				}}
+			>
 				<img src={labsIcon} alt="logo" />
 				<span class="title">Helgesson <span class="thin">Labs</span></span>
-			</a>
-			<MenuButton active={showMobileMenu} handleClick={handleMobileIconClick} />
+			</p>
+			<MenuButton active={showMobileMenu} />
 		</div>
-		<ul class="navbar-list" class:mobile={showMobileMenu}>
+		<ul
+			class="navbar-list"
+			class:mobile={showMobileMenu}
+			bind:this={navbarList}
+			style:--navbar-list-height="{navbarListHeight}px"
+		>
 			{#each navItems as item}
 				<li>
-					<a href={item.href}>{item.label}</a>
+					<a href={item.href} on:click={handleMobileIconClick}>{item.label}</a>
 				</li>
 			{/each}
 		</ul>
+		<div class="line" class:mobile={showMobileMenu} />
 	</div>
 </nav>
+
+{#if showMobileMenu}
+	<div class="overlay" on:click={handleMobileIconClick} />
+{/if}
 
 <style lang="scss">
 	nav {
@@ -84,7 +110,8 @@
 		/* height: 64px; */
 		min-height: 64px;
 		max-width: 1200px;
-		width: calc(100% - 4rem);
+		/* width: calc(100% - 4rem); */
+		padding: 0 2rem;
 		margin: 0 auto;
 
 		.main {
@@ -116,11 +143,31 @@
 		display: flex;
 		gap: 2.4rem;
 
+		li {
+			width: 100%;
+		}
+
 		a {
+			display: block;
+
 			font-size: 2rem;
 			font-weight: 400;
+
 			color: $white;
+			width: 100%;
+
+			text-align: center;
 		}
+	}
+
+	.line {
+		position: absolute;
+		top: 64px;
+		transform: translateX(-100%);
+
+		width: 100%;
+
+		transition: all 0.3s ease-in-out;
 	}
 
 	@media screen and (max-width: 900px) {
@@ -128,14 +175,25 @@
 			flex-direction: column;
 			align-items: center;
 
+			padding: 0;
+
+			position: relative;
+			overflow-x: clip;
+
 			.main {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
 				width: 100%;
+				height: 64px;
+
+				z-index: 100;
 
 				padding-top: 1.2rem;
 				padding-bottom: 0.8rem;
+				padding-inline: 2rem;
+
+				background-color: $dark-gray;
 			}
 		}
 
@@ -144,18 +202,50 @@
 		}
 
 		.navbar-list {
-			display: none;
+			position: absolute;
+			top: calc(64px - var(--navbar-list-height));
+
+			display: flex;
 			flex-direction: column;
 			align-items: center;
 			gap: 1.6rem;
 
-			margin-top: 1rem;
-			margin-bottom: 1.6rem;
+			padding: 1.6rem 0;
 
 			width: 100%;
+			height: fit-content;
+
+			background-color: $dark-gray;
+
+			transition: all 0.3s ease-in-out;
 
 			&.mobile {
-				display: flex;
+				top: 64px;
+			}
+		}
+
+		.line {
+			border-top: $green 3px dashed;
+			&.mobile {
+				transform: translateX(0);
+			}
+		}
+
+		.overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			background-color: rgba(0, 0, 0, 0.5);
+
+			z-index: 99;
+
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				cursor: pointer;
 			}
 		}
 	}

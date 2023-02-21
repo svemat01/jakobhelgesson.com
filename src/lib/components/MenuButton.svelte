@@ -1,9 +1,8 @@
 <script lang="ts">
-	export let handleClick: () => void;
 	export let active: boolean;
 </script>
 
-<div on:click={handleClick} on:keydown={handleClick} class="mobile-icon" class:active>
+<div class="mobile-icon" class:active>
 	<span />
 	<span />
 	<span />

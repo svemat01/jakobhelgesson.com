@@ -53,7 +53,7 @@
 	});
 
 	let navbarList: HTMLElement;
-	let navbarListHeight: number;
+	let navbarListHeight = 500;
 </script>
 
 <nav>

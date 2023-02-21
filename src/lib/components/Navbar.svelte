@@ -19,9 +19,11 @@
 	nav {
 		background-color: $dark-gray;
         width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
 
         position: sticky;
         top: 0;
+        z-index: 100;
 	}
 
 	.container {

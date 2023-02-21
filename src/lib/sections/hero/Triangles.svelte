@@ -17,7 +17,7 @@
 
 <style lang="scss">
 	.triangles {
-		@media screen and (min-width: 1100px) {
+		@media screen and (min-width: 900px) {
 			position: static;
 			height: 64px;
 			width: 100%;
@@ -48,15 +48,15 @@
 	}
 
 	.triangle {
-		position: absolute;
 		display: none;
 
 		transition: transform 0.4s ease-in-out;
 
-		@media screen and (min-width: 1100px) and (max-width: 1599px) {
+		@media screen and (min-width: 900px) {
 			position: static;
 			display: block;
-			width: 64px;
+			width: 48px;
+			height: fit-content;
 
 			transform: rotate(90deg);
 
@@ -77,7 +77,12 @@
 			}
 		}
 
+		@media screen and (min-width: 1200px) {
+			width: 64px;
+		}
+
 		@media screen and (min-width: 1600px) {
+			position: absolute;
 			&:nth-child(1) {
 				display: block;
 

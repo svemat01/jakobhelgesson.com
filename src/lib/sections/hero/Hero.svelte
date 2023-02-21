@@ -1,6 +1,7 @@
 <script lang="ts">
 	import jakob from '$lib/assets/jakob.png';
 	import divider from '$lib/assets/divider.svg';
+	import Triangles from './Triangles.svelte';
 </script>
 
 <div class="hero">
@@ -13,6 +14,8 @@
 			Full-Stack & DevOps Consultant <br />
 			Born in Sweden, Working Globally
 		</h2>
+
+		<Triangles />
 	</div>
 
 	<div class="portrait">
@@ -36,6 +39,9 @@
 
 	.title {
 		margin-top: 16rem;
+
+		display: flex;
+		flex-direction: column;
 
 		h1 {
 			font-size: 8.2rem;

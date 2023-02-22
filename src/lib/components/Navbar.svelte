@@ -45,16 +45,21 @@
 		mediaListener.addEventListener('change', mediaQueryHandler);
 
 		navbarListHeight = navbarList.offsetHeight;
-
-		document.addEventListener('resize', () => {
-			navbarListHeight = navbarList.offsetHeight;
-			console.log({ navbarListHeight });
-		});
 	});
+
+	let timer: number;
+	const onResize = () => {
+		clearTimeout(timer);
+		timer = setTimeout(() => {
+			navbarListHeight = navbarList.offsetHeight;
+		}, 100) as unknown as number;
+	};
 
 	let navbarList: HTMLElement;
 	let navbarListHeight = 500;
 </script>
+
+<svelte:window on:resize={onResize} />
 
 <nav>
 	<div class="container">

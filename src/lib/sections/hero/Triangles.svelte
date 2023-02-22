@@ -1,6 +1,28 @@
+<script lang="ts">
+	// function to generate random value between min and max
+	const random = (min: number, max: number) => {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	};
+
+	const shoot = (event: MouseEvent) => {
+		const target = event.currentTarget as HTMLElement;
+
+		const beforeShoot = target.style.transform;
+
+		setTimeout(() => {
+			target.style.transform = beforeShoot;
+		}, 3000);
+
+		target.style.transform = `translateY(-${
+			(target.clientHeight + 100, 1000)
+		}px) translateX(${random(-1000, 1000)}%) rotate(${random(1, 5)}turn)`;
+	};
+</script>
+
 <div class="triangles">
 	{#each Array(4) as _, index}
-		<div class="triangle">
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div class="triangle" on:click={shoot}>
 			<svg viewBox="0 0 201 179">
 				<path
 					d="M83.1865 10.9395C90.8876 -2.37767 110.112 -2.37767 117.814 10.9395L197.645 148.988C205.355 162.321 195.733 179 180.331 179H20.669C5.26678 179 -4.35495 162.321 3.35548 148.988L83.1865 10.9395Z"
@@ -26,12 +48,6 @@
 			gap: 1rem;
 
 			margin-top: 2.5rem;
-
-			&:hover:has(.triangle:hover) {
-				.triangle {
-					transform: translateX(2rem);
-				}
-			}
 		}
 
 		@media screen and (min-width: 1600px) {
@@ -59,6 +75,10 @@
 			height: fit-content;
 
 			transform: rotate(90deg);
+
+			&:hover {
+				transform: rotate(90deg) scale(1.1);
+			}
 
 			&:nth-child(1) {
 				--color: #37ff8b;

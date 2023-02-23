@@ -39,6 +39,8 @@
 
 <style lang="scss">
 	.triangles {
+		pointer-events: none;
+
 		@media screen and (min-width: 900px) and (max-width: 1599px) {
 			position: static;
 			height: 64px;
@@ -65,6 +67,7 @@
 
 	.triangle {
 		display: none;
+		pointer-events: auto;
 
 		transition: transform 0.4s ease-in-out;
 

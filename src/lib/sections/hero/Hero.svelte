@@ -1,10 +1,9 @@
 <script lang="ts">
 	import jakob from '$lib/assets/jakob.png';
-	import divider from '$lib/assets/divider.svg';
 	import Triangles from './Triangles.svelte';
 </script>
 
-<div class="hero">
+<section class="hero">
 	<div class="wrapper">
 		<div class="title">
 			<h1>
@@ -24,9 +23,7 @@
 			<img src={jakob} alt="" />
 		</div>
 	</div>
-
-	<img src={divider} alt="" class="divider" />
-</div>
+</section>
 
 <style lang="scss">
 	.hero {
@@ -120,7 +117,6 @@
 					width: 300px;
 				}
 			}
-			
 		}
 
 		@media screen and (max-width: 900px) {
@@ -185,13 +181,5 @@
 				margin-top: 2rem;
 			}
 		}
-	}
-
-	.divider {
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-
-		width: 100%;
 	}
 </style>

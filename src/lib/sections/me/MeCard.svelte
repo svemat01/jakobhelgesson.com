@@ -68,6 +68,8 @@
 			font-size: 2.8rem;
 			font-weight: 400;
 
+            margin-bottom: 0.3rem;
+
             transition: color 0.2s ease-in-out;
 		}
 

@@ -21,7 +21,7 @@
 		},
 		DevOps: {
 			title: 'DevOps',
-			text: 'I can help you with your CI/CD pipelines and server management',
+			text: 'I handle CI/CD pipelines, server management, and more',
 			icon: DiTerminal,
 			card: true
 		},

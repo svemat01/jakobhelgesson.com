@@ -26,7 +26,7 @@
 			card: true
 		},
 		default: {
-			title: 'About me',
+			title: 'A Passionate Full-Stack Developer and DevOps Specialist',
 			text: "From a young age, I knew that my passion for software engineering would one day become my career. As a full-stack developer and DevOps specialist, I've had the pleasure of working on a wide range of projects over the years, ranging from personal endeavors to professional collaborations.\n\nFrom a young age, I knew that my passion for software engineering would one day become my career. As a full-stack developer and DevOps specialist, I've had the pleasure of working on a wide range of projects over the years, ranging from personal endeavors to professional collaborations.",
 			icon: DiCode,
 			card: false

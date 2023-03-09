@@ -53,7 +53,6 @@
 	};
 </script>
 
-<h1>About</h1>
 <section class="me">
 	<div class="wid">
 		<p class="intro">What I do</p>
@@ -72,7 +71,7 @@
 		</div>
 	</div>
 	<div class="am">
-		<p class="intro">About me</p>
+		<p class="intro">Who I am</p>
 
         {#each Object.entries(entries) as [key, value]}
             {#if activeCard === key}
@@ -86,15 +85,6 @@
 </section>
 
 <style lang="scss">
-	h1 {
-		font-size: 4rem;
-		font-weight: 500;
-		margin-bottom: 2rem;
-
-		color: $green;
-		/* text-align: center; */
-	}
-
 	.me {
 		display: flex;
 		gap: 12rem;
@@ -118,7 +108,7 @@
 	}
 
 	p.intro {
-		color: $light-gray;
+		color: $gray-800;
 		font-size: 2.4rem;
 
 		&:first-of-type {
@@ -148,7 +138,7 @@
 		}
 
 		h2 {
-			font-size: 4rem;
+			font-size: 2.8rem;
 			font-weight: 500;
 			margin-bottom: 1.8rem;
 		}

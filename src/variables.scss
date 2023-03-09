@@ -1,7 +1,20 @@
-$white: #FEFDF9;
-$black: #191919;
-$dark-gray: #202020;
-$gray: #3C3C3C;
-$light-gray: #B3B3B3;
+// $white: #FEFDF9;
+// $black: #131313;
+// $dark-gray: #191919;
+// $gray: #3C3C3C;
+// $light-gray: #B3B3B3;
+
+$gray-100: #131313;
+$gray-150: #141414;
+$gray-200: #171717;
+$gray-250: #181818;
+$gray-300: #1C1C1C;
+$gray-350: #191919;
+
+$gray-800: #B3B3B3;
+$gray-900: #FEFDF9;
+
+$dark-gradient: linear-gradient(180deg, $gray-150 0%, $gray-250 100%);
+$light-gradient: linear-gradient(180deg, $gray-300 0%, $gray-200 100%);
 
 $green: #37FF8B;

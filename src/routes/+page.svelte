@@ -21,7 +21,7 @@
 
 		&::before {
 			content: '';
-			background-color: $dark-gray;
+			background-color: $gray-350;
 
 			position: absolute;
 			z-index: -1;
@@ -36,7 +36,7 @@
 			max-width: 1300px;
 
 			margin-inline: auto;
-			padding-block: 8rem;
+			padding-block: 12rem;
 		}
 	}
 </style>

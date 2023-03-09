@@ -21,10 +21,11 @@
 	.card {
 		display: flex;
 		justify-content: space-between;
+		flex: 1;
 		gap: 1rem;
 
-		background-color: #262626;
-		padding: 3.5rem;
+		background: $dark-gradient;
+		padding: 2.5rem;
         border-radius: 1rem;
 
         cursor: pointer;
@@ -76,7 +77,7 @@
 		p {
 			font-size: 2rem;
 			font-weight: 300;
-			color: $light-gray;
+			color: $gray-800;
 		}
 	}
 </style>

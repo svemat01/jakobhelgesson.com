@@ -1,5 +1,6 @@
 <script>
 	import Hero from '$lib/sections/hero/Hero.svelte';
+	import LatestWorks from '$lib/sections/latest-works/LatestWorks.svelte';
 	import Me from '$lib/sections/me/Me.svelte';
 </script>
 
@@ -8,9 +9,10 @@
 <div class="section">
 	<div class="wrapper">
 		<Me />
-		<!-- <Projects /> -->
 	</div>
 </div>
+
+<LatestWorks />
 
 <style lang="scss">
 	.section {

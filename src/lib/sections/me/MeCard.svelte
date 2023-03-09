@@ -28,6 +28,8 @@
 		padding: 2.5rem;
         border-radius: 1rem;
 
+		min-height: 150px;
+
         cursor: pointer;
 
         filter: drop-shadow(0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.5));

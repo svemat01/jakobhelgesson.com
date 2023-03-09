@@ -55,7 +55,7 @@
 
 <section class="me">
 	<div class="wid">
-		<p class="intro">What I do</p>
+		<h2 class="intro">What I do</h2>
 		<div class="cards">
             {#each Object.entries(entries) as [key, value]}
                 {#if value.card}
@@ -71,12 +71,12 @@
 		</div>
 	</div>
 	<div class="am">
-		<p class="intro">Who I am</p>
+		<h2 class="intro">Who I am</h2>
 
         {#each Object.entries(entries) as [key, value]}
             {#if activeCard === key}
                 <div class="am-text" transition:fly>
-                    <h2>{value.title}</h2>
+                    <h3>{value.title}</h3>
                     <p class="text">{value.text}</p>
                 </div>
             {/if}
@@ -107,9 +107,10 @@
 		}
 	}
 
-	p.intro {
+	h2.intro {
 		color: $gray-800;
 		font-size: 2.4rem;
+		font-weight: 400;
 
 		&:first-of-type {
 			margin-bottom: 1.8rem;
@@ -137,7 +138,7 @@
 			height: fit-content;
 		}
 
-		h2 {
+		h3 {
 			font-size: 2.8rem;
 			font-weight: 500;
 			margin-bottom: 1.8rem;
@@ -153,7 +154,7 @@
 			line-height: 1.5;
 			margin-bottom: 2rem;
 
-			color: $light-gray;
+			color: $gray-800;
             white-space: pre-line
 		}
 	}

@@ -29,8 +29,10 @@
 		justify-content: center;
 
 		max-width: 1300px;
-		margin-inline: auto;
+        width: 100%;
 
+		margin-inline: auto;
+        margin-top: 4rem;
 		padding: 2rem 0;
 
 		h2 {
@@ -57,7 +59,6 @@
 			grid-template-columns: repeat(3, minmax(300px, 1fr));
 			grid-gap: 1rem;
 			width: 100%;
-			padding: 0 2rem;
 
 			div {
 				background-color: $gray-300;

@@ -1,6 +1,9 @@
+<script>
+	import SectionHeader from '$lib/components/SectionHeader.svelte';
+
+</script>
 <section class="lastest-works container">
-	<h2>Latest works</h2>
-	<h3>Recent projects that reflect my passion for coding</h3>
+	<SectionHeader header="Latest works" subHeader="Recent projects that reflect my passion for coding" />
 
 	<div class="projects">
 		<div>

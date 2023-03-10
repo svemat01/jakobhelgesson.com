@@ -43,6 +43,8 @@
 		border-radius: 1rem;
 
 		min-height: 150px;
+
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
 
 	.title {
@@ -53,13 +55,15 @@
 	.description {
 		font-size: 2rem;
 		font-weight: 300;
+		
+		margin-bottom: 1rem;
 	}
 
 	.meta {
 		display: flex;
 		align-items: center;
 
-        margin-top: 1.5rem;
+        margin-top: auto;
 
 		.bar {
 			width: 3px;

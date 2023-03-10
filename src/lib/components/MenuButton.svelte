@@ -25,7 +25,7 @@
 		position: absolute;
 		width: 30px;
 		height: 3px;
-		background-color: $white;
+		background-color: $gray-900;
 		border-radius: 2px;
 
 		transition: all 0.3s ease;

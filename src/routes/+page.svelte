@@ -8,7 +8,7 @@ import Hero from '$lib/sections/hero/Hero.svelte';
 <Hero />
 
 <div class="section">
-	<div class="wrapper">
+	<div class="wrapper container">
 		<Me />
 	</div>
 </div>
@@ -37,10 +37,6 @@ import Hero from '$lib/sections/hero/Hero.svelte';
 		}
 
 		.wrapper {
-			width: calc(100% - 6rem);
-			max-width: 1300px;
-
-			margin-inline: auto;
 			padding-block: 12rem;
 		}
 	}

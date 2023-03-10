@@ -1,4 +1,4 @@
-<section class="lastest-works">
+<section class="lastest-works container">
 	<h2>Latest works</h2>
 	<h3>Recent projects that reflect my passion for coding</h3>
 
@@ -28,10 +28,6 @@
 		align-items: center;
 		justify-content: center;
 
-		max-width: 1300px;
-        width: 100%;
-
-		margin-inline: auto;
         margin-top: 4rem;
 		padding: 2rem 0;
 

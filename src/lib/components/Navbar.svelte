@@ -98,7 +98,7 @@
 
 <style lang="scss">
 	nav {
-		background-color: $dark-gray;
+		background-color: $gray-350;
 		width: 100%;
 		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
 
@@ -136,7 +136,7 @@
 		.title {
 			font-size: 2.4rem;
 			font-weight: 400;
-			color: $white;
+			color: $gray-900;
 
 			.thin {
 				font-weight: 200;
@@ -158,7 +158,7 @@
 			font-size: 2rem;
 			font-weight: 400;
 
-			color: $white;
+			color: $gray-900;
 			width: 100%;
 
 			text-align: center;
@@ -198,7 +198,7 @@
 				padding-bottom: 0.8rem;
 				padding-inline: 2rem;
 
-				background-color: $dark-gray;
+				background-color: $gray-350;
 			}
 		}
 
@@ -220,7 +220,7 @@
 			width: 100%;
 			height: fit-content;
 
-			background-color: $dark-gray;
+			background-color: $gray-350;
 
 			transition: all 0.3s ease-in-out;
 

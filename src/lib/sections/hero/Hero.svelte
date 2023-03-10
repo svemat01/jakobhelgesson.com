@@ -48,7 +48,7 @@
 			h1 {
 				font-size: 8.2rem;
 				font-weight: 600;
-				color: $white;
+				color: $gray-900;
 
 				.fancy {
 					color: $green;
@@ -58,7 +58,7 @@
 			h2 {
 				font-size: 3.2rem;
 				font-weight: 400;
-				color: $light-gray;
+				color: $gray-800;
 			}
 		}
 

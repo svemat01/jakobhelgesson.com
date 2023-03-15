@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { getPosts } from '$lib/data/blogPosts.js';
+	import SectionHeader from '$lib/components/SectionHeader.svelte';
+import { getPosts } from '$lib/data/blogPosts.js';
 	import { createQuery } from '@tanstack/svelte-query';
 	import Post from './Post.svelte';
 
@@ -11,8 +12,7 @@
 </script>
 
 <section class="container">
-	<h2>Blog Posts</h2>
-	<h3>Explore Guides & Discussions</h3>
+	<SectionHeader header="Blog Posts" subHeader="Explore Guides & Discussions" --text-align="left" />
 
 	{#if $postsQuery.isLoading}
 		<p>Loading...</p>
@@ -40,6 +40,7 @@
 		justify-content: center;
 		
 		margin-top: 8rem;
+		margin-bottom: 14rem;
 		padding: 2rem 0;
 	}
 

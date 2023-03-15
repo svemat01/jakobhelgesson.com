@@ -4,6 +4,7 @@
 	import Hero from '$lib/sections/hero/Hero.svelte';
 	import LatestWorks from '$lib/sections/latest-works/LatestWorks.svelte';
 	import Me from '$lib/sections/me/Me.svelte';
+	import Skills from '$lib/sections/skills/Skills.svelte';
 </script>
 
 <Hero />
@@ -16,3 +17,6 @@
 
 <BlogPosts />
 
+<Diagonal --skew-y="2deg" --padding-top="6rem" >
+	<Skills />
+</Diagonal>

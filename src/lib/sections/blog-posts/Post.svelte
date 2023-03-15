@@ -3,33 +3,37 @@
 	export let description: string;
 	export let author: string;
 	export let date: string;
-	export let readTime: string;
+	export let minutesRead: string;
+	export let slug: string;
 </script>
 
 <div class="post">
-	<h2 class="title">
-		{title}
-	</h2>
-	<p class="description">
-		{description}
-	</p>
-	<div class="meta">
-		<div class="bar" />
-		<div class="author">
-			{#each author.split(' ') as word}
-				{word}
-				<br />
-			{/each}
-		</div>
-		<div class="right">
-			<div class="read-time">
-				{readTime}
+	<!-- svelte-ignore security-anchor-rel-noreferrer -->
+	<a href="https://blog.helgesson.dev/{slug}" target="_blank" rel="noopener" >
+		<h2 class="title">
+			{title}
+		</h2>
+		<p class="description">
+			{description}
+		</p>
+		<div class="meta">
+			<div class="bar" />
+			<div class="author">
+				{#each author.split(' ') as word}
+					{word}
+					<br />
+				{/each}
 			</div>
-			<div class="date">
-				{date}
+			<div class="right">
+				<div class="read-time">
+					{minutesRead}
+				</div>
+				<div class="date">
+					{date}
+				</div>
 			</div>
 		</div>
-	</div>
+	</a>
 </div>
 
 <style lang="scss">
@@ -45,6 +49,17 @@
 		min-height: 150px;
 
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			transform: translateY(-0.5rem);
+			box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+		}
+	}
+
+	a {
+		display: contents;
 	}
 
 	.title {

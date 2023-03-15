@@ -20,13 +20,14 @@ import { getPosts } from '$lib/data/blogPosts.js';
 		<p>Error: {$postsQuery.error.message}</p>
 	{:else if $postsQuery.isSuccess}
 		<div class="posts">
-			{#each $postsQuery.data as post}
+			{#each $postsQuery.data as { title, description, author, date, minutesRead, slug }}
 				<Post
-					title={post.title}
-					description={post.description}
-					author={post.author}
-					date={post.date}
-					readTime={post.minutesRead}
+					{title}
+					{description}
+					{author}
+					{date}
+					{minutesRead}
+					{slug}
 				/>
 			{/each}
 		</div>
@@ -42,24 +43,6 @@ import { getPosts } from '$lib/data/blogPosts.js';
 		margin-top: 8rem;
 		margin-bottom: 14rem;
 		padding: 2rem 0;
-	}
-
-	h2 {
-		font-size: 2.4rem;
-		font-weight: 400;
-
-		color: $gray-800;
-
-		margin-bottom: 1.6rem;
-	}
-
-	h3 {
-		font-size: 3.6rem;
-		font-weight: 500;
-
-		max-width: 75rem;
-
-		margin-bottom: 3rem;
 	}
 
 	.posts {

@@ -24,7 +24,9 @@
 		}
 
 		.wrapper {
-			padding-block: 12rem;
+			/* padding-block: 12rem; */
+			padding-top: var(--padding-top, 12rem);
+			padding-bottom: var(--padding-bottom, 12rem);
 		}
 	}
 </style>

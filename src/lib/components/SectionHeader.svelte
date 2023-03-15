@@ -46,7 +46,7 @@
 
         max-width: 75rem;
 
-        margin-bottom: 5rem;
+        margin-bottom: var(--margin-bottom, 5rem);
     }
 
 </style>

@@ -5,8 +5,8 @@
 	import { browser } from '$app/environment';
 	import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
 	
-	import Navbar from '../lib/components/Navbar.svelte';
-	import Footer from '../lib/components/Footer.svelte';
+	// import Navbar from '../lib/components/Navbar.svelte';
+	// import Footer from '../lib/components/Footer.svelte';
 
 	const queryClient = new QueryClient({
 		defaultOptions: {
@@ -18,9 +18,9 @@
 </script>
 
 <QueryClientProvider client={queryClient}>
-	<Navbar />
+	<!-- <Navbar /> -->
 
 	<slot />
 
-	<Footer />
+	<!-- <Footer /> -->
 </QueryClientProvider>

@@ -15,8 +15,8 @@ html {
 }
 
 body {
-    background-color: $gray-100;
-    color: $gray-900;
+    background-color: $background;
+    color: $text;
 
     font-family: 'Inter', sans-serif;
 
@@ -35,10 +35,4 @@ a {
 
 li {
     list-style: none;
-}
-
-.container {
-    max-width: 130rem;
-    width: calc(100% - 6rem);
-    margin-inline: auto;
 }

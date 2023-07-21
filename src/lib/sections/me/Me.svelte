@@ -1,161 +1,194 @@
-<script lang="ts">
-	import MeCard from './MeCard.svelte';
-	import DiCode from 'svelte-icons/di/DiCode.svelte';
-	import DiDatabase from 'svelte-icons/di/DiDatabase.svelte';
-	import DiTerminal from 'svelte-icons/di/DiTerminal.svelte';
-	import { fly } from 'svelte/transition';
-	import type { SvelteComponent } from 'svelte';
-
-	const entries = {
-		'Front-End': {
-			title: 'Front-End',
-			text: 'I develop smart and user-friendly interfaces using Svelte & React',
-			icon: DiCode,
-			card: true
-		},
-		'Back-End': {
-			title: 'Back-End',
-			text: 'Various different back-ends for your applications needs using Go or Typescript',
-			icon: DiDatabase,
-			card: true
-		},
-		DevOps: {
-			title: 'DevOps',
-			text: 'I handle CI/CD pipelines, server management, and more',
-			icon: DiTerminal,
-			card: true
-		},
-		default: {
-			title: 'A Passionate Full-Stack Developer and DevOps Specialist',
-			text: "From a young age, I knew that my passion for software engineering would one day become my career. As a full-stack developer and DevOps specialist, I've had the pleasure of working on a wide range of projects over the years, ranging from personal endeavors to professional collaborations.\n\nFrom a young age, I knew that my passion for software engineering would one day become my career. As a full-stack developer and DevOps specialist, I've had the pleasure of working on a wide range of projects over the years, ranging from personal endeavors to professional collaborations.",
-			icon: DiCode,
-			card: false
-		}
-	} satisfies Record<
-		string,
-		{
-			title: string;
-			text: string;
-			icon: typeof SvelteComponent;
-			card: boolean;
-		}
-	>;
-
-	let activeCard = 'default';
-
-	const cardClick = (card: string) => {
-		console.log({ card, activeCard });
-		if (activeCard === card) {
-			activeCard = 'default';
-		} else {
-			activeCard = card;
-		}
-	};
+<script>
+	import labsIcon from '$lib/assets/labs-icon.svg';
+	import jakob from '$lib/assets/jakob.png';
+	import Card from '$lib/components/Card.svelte';
 </script>
 
-<section class="me">
-	<div class="wid">
-		<h2 class="intro">What I do</h2>
-		<div class="cards">
-            {#each Object.entries(entries) as [key, value]}
-                {#if value.card}
-                    <MeCard
-                        title={value.title}
-                        text={value.text}
-                        icon={value.icon}
-                        active={activeCard === key}
-                        on:click={() => cardClick(key)}
-                    />
-                {/if}
-            {/each}
+<Card --card-padding="0" --card-grid-area="me">
+	<div class="wrapper">
+		<div class="title">
+			<h1>
+				Jakob <br />
+				<span class="fancy">Helgesson</span>
+			</h1>
+			<h2>
+				Full-Stack & DevOps Consultant <br />
+				Born in Sweden, Working Globally
+			</h2>
+		</div>
+
+		<div class="portrait">
+			<div class="bg" />
+			<img src={jakob} alt="" />
+		</div>
+
+		<div class="brand">
+			<img src={labsIcon} alt="logo" />
+			<span class="brand-title">Helgesson <span class="thin">Labs</span></span>
 		</div>
 	</div>
-	<div class="am">
-		<h2 class="intro">Who I am</h2>
-
-        {#each Object.entries(entries) as [key, value]}
-            {#if activeCard === key}
-                <div class="am-text" transition:fly>
-                    <h3>{value.title}</h3>
-                    <p class="text">{value.text}</p>
-                </div>
-            {/if}
-        {/each}
-	</div>
-</section>
+</Card>
 
 <style lang="scss">
-	.me {
+	.wrapper {
+		display: grid;
+		grid-template-areas:
+			'title portrait'
+			'brand portrait';
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr auto;
+
+		max-height: 620px;
+        padding: 0 3rem;
+
+		@media (max-width: 880px) {
+			grid-template-areas:
+				'title'
+				'portrait';
+			grid-template-columns: 1fr;
+			justify-items: center;
+			max-height: unset;
+            padding: 0 2rem;
+		}
+	}
+
+	.title {
+		grid-area: title;
+
+		margin-top: 5rem;
+
 		display: flex;
-		gap: 12rem;
+		flex-direction: column;
 
-		> div {
-			width: 50%;
+		h1 {
+			font-size: 6.4rem;
+			font-weight: 600;
+			color: $text;
+
+			.fancy {
+				color: $primary;
+			}
 		}
 
-		@media screen and (max-width: 1200px) {
-			gap: 6rem;
+		h2 {
+			font-size: 2.4rem;
+			font-weight: 400;
+			color: $text;
+			opacity: 0.8;
 		}
 
-		@media screen and (max-width: 900px) {
-			flex-direction: column-reverse;
-			gap: 4rem;
-
-			> div {
-				width: 100%;
+		@media (max-width: 550px) {
+			h1 {
+				font-size: 4.8rem;
+			}
+			h2 {
+				font-size: 2rem;
 			}
 		}
 	}
 
-	h2.intro {
-		color: $gray-800;
-		font-size: 2.4rem;
-		font-weight: 400;
-
-		&:first-of-type {
-			margin-bottom: 1.8rem;
-		}
-	}
-
-	.wid {
+	.portrait {
+		grid-area: portrait;
+		position: relative;
 		display: flex;
-		flex-direction: column;
+		height: 100%;
+		overflow: hidden;
 
-		.cards {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			gap: 2.5rem;
+		img {
+			height: 100%;
+			max-height: 90%;
 
-			flex: 1;
+			margin: auto;
+			margin-bottom: 0;
+			object-fit: cover;
+			object-position: top;
+		}
+
+		.bg {
+			position: absolute;
+			left: 0;
+			right: 0;
+			z-index: -1;
+			margin-left: auto;
+			margin-right: auto;
+
+			background-color: $primary;
+
+			width: 100%;
+			max-width: 250px;
+			height: 110%;
+			transform: rotate(3deg) translateX(5%) translateY(-5%);
+		}
+
+		@media (max-width: 880px) {
+			height: 100%;
+			width: 100%;
+			max-height: 60rem;
+			max-width: 45rem;
+			position: unset;
+			img {
+				margin-top: 2rem;
+				max-height: 100%;
+				width: 100%;
+			}
+			.bg {
+				max-width: unset;
+				transform: unset;
+
+				max-height: 10rem;
+				width: 120%;
+				bottom: 0;
+				bottom: 10rem;
+				transform: rotate(-3deg) translateX(-10%);
+			}
+		}
+
+		@media (max-width: 550px) {
+			img {
+				max-height: 42rem;
+				max-width: 35rem;
+			}
+
+			.bg {
+				display: none;
+			}
 		}
 	}
-	.am {
-		display: grid;
-		grid-auto-rows: min-content;
+	.brand {
+		grid-area: brand;
+		margin-bottom: 2rem;
+		display: flex;
+		align-items: center;
+		gap: 1.4rem;
 
-		.intro {
-			height: fit-content;
+		img {
+			height: 40px;
 		}
 
-		h3 {
-			font-size: 2.8rem;
-			font-weight: 500;
-			margin-bottom: 1.8rem;
+		.brand-title {
+			font-size: 2.4rem;
+			font-weight: 400;
+			color: $text;
+
+			.thin {
+				font-weight: 200;
+			}
 		}
 
-		.am-text {
-			grid-row-start: 2;
-			grid-column-start: 1;
+		@media (max-width: 880px) {
+			position: absolute;
+			top: 2rem;
+			right: 3rem;
+			writing-mode: vertical-rl;
+			opacity: 0.5;
+
+			img {
+				transform: rotate(80deg);
+			}
 		}
 
-		.text {
-			font-size: 2rem;
-			line-height: 1.5;
-			margin-bottom: 2rem;
-
-			color: $gray-800;
-            white-space: pre-line
+		@media (max-width: 550px) {
+			display: none;
 		}
 	}
 </style>

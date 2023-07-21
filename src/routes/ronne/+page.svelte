@@ -16,7 +16,7 @@
 	}
 
 	h1 {
-		color: $green;
+		color: $primary;
 		font-size: 3.2rem;
 	}
 

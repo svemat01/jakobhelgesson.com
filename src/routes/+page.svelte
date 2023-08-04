@@ -29,7 +29,7 @@
 		display: grid;
 		gap: 1.5rem;
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-		grid-template-rows: auto;
+		grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
 		grid-auto-rows: minmax(200px, auto);
 		grid-template-areas:
 			'me me me'

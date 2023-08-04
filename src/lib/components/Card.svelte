@@ -1,15 +1,19 @@
 <section class="card">
-    <slot />
-    <div class="bg" />
+	<slot name="root">
+		<h1><slot name="title">NO TITLE</slot></h1>
+		<div class="content"><slot>NO CONTENT</slot></div>
+	</slot>
+	<div class="bg" />
 </section>
 
 <style lang="scss">
-    .card {
+	$border-radius: 1.8rem;
+	.card {
 		position: relative;
-		border-radius: 1.8rem;
-		padding: var(--card-padding, 2rem 3rem);
+		border-radius: $border-radius;
 		overflow: hidden;
 		grid-area: var(--card-grid-area, unset);
+		height: 100%;
 
 		.bg {
 			position: absolute;
@@ -20,8 +24,25 @@
 
 			background-color: var(--card-bg, $text);
 			opacity: var(--card-opacity, 0.03);
-			border-radius: 1.8rem;
+			border-radius: $border-radius;
 			z-index: -5;
 		}
+	}
+
+	h1 {
+		font-size: 2rem;
+		font-weight: 500;
+
+		padding: var(--card-title-padding, var(--card-padding, $card-padding));
+		/* margin-bottom: 1rem; */
+		border-bottom: $card-divider;
+	}
+
+	.content {
+		font-size: 1.6rem;
+		line-height: 1.4;
+		color: $text-dimmed;
+
+		padding: var(--card-content-padding, var(--card-padding, $card-padding));
 	}
 </style>

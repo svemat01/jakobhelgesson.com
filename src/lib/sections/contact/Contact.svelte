@@ -1,23 +1,22 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
-	import FaBook from 'svelte-icons/fa/FaBook.svelte';
 	import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte';
 	import FaDiscord from 'svelte-icons/fa/FaDiscord.svelte';
 	import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
 </script>
 
 <Card --card-grid-area="contact">
-	<h1>
+	<span slot="title">
 		<!-- <div class="icon"><FaBook /></div> -->
 		Contact
-	</h1>
+	</span>
 	<!-- Make a list of email discord twitter github using ul li -->
 	<div class="contact-list">
 		<a href="mailto:jakob@helgesson.dev" target="_blank" rel="noreferrer">
 			<div class="icon"><FaEnvelope /></div>
 			<span> jakob@helgesson.dev </span>
 		</a>
-		<a href="https://discord.gg/2YJY7Q6" target="_blank" rel="noreferrer">
+		<a href="https://discord.gg/v3x" target="_blank" rel="noreferrer">
 			<div class="icon"><FaDiscord /></div>
 			<span>jabh</span>
 		</a>
@@ -29,18 +28,10 @@
 </Card>
 
 <style lang="scss">
-	h1 {
-		font-size: 2.4rem;
-		font-weight: 400;
-
-		margin-bottom: 1rem;
-	}
-
 	.contact-list {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		/* padding: 1.4rem 1.6rem; */
 
 		font-size: 1.8rem;
 

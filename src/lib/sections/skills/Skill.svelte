@@ -15,14 +15,14 @@
     }
 
     .name {
-        font-size: 2.4rem;
-        font-weight: 300;
-        color: $gray-800;
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $text-dimmed;
     }
 
     img {
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
         object-fit: contain;
     }
 </style>

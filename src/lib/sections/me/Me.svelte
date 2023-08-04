@@ -4,8 +4,8 @@
 	import Card from '$lib/components/Card.svelte';
 </script>
 
-<Card --card-padding="0" --card-grid-area="me">
-	<div class="wrapper">
+<Card --card-grid-area="me">
+	<div class="wrapper" slot="root">
 		<div class="title">
 			<h1>
 				Jakob <br />

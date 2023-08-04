@@ -7,6 +7,7 @@
 	import Contact from '$lib/sections/contact/Contact.svelte';
 	import IDo from '$lib/sections/iDo/IDo.svelte';
 	import WhoIAm from '$lib/sections/whoIAm/WhoIAm.svelte';
+	import Skills from '$lib/sections/skills/Skills.svelte';
 </script>
 
 <main>
@@ -14,6 +15,7 @@
 	<Contact />
 	<WhoIAm />
 	<IDo />
+	<Skills />
 </main>
 
 <style lang="scss">
@@ -27,24 +29,31 @@
 		display: grid;
 		gap: 1.5rem;
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-		/* grid-template-rows: auto; */
+		grid-template-rows: auto;
+		grid-auto-rows: minmax(200px, auto);
 		grid-template-areas:
 			'me me me'
 			'whoiam whoiam contact'
-			'ido ido ido';
+			'ido skills skills'
+			'ido . .';
 
 		@media (max-width: 880px) {
+			grid-auto-rows: minmax(150px, auto);
 			grid-template-areas:
 				'me me'
 				'whoiam whoiam'
-				'. contact';
+				'ido contact'
+				'ido .'
+				'skills skills';
 		}
 
 		@media (max-width: 550px) {
 			grid-template-areas:
 				'me'
 				'whoiam'
-				'contact';
+				'contact'
+				'ido'
+				'skills';
 		}
 	}
 </style>

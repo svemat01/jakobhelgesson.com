@@ -21,10 +21,6 @@ type Skill = {
 	name: string;
 };
 
-type PrimarySkill = Skill & {
-	color: string;
-};
-
 type Skills = Record<'Languages' | 'Technologies' | 'Tools', Skill[]>;
 
 export const skills: Skills = {
@@ -54,9 +50,3 @@ export const skills: Skills = {
 		{ img: figma, name: 'Figma' }
 	]
 };
-
-export const primarySkills: PrimarySkill[] = [
-	{ img: svelte, name: 'Svelte', color: '#FF3E00' },
-	{ img: ts, name: 'Typescript', color: '#3178C6' },
-	{ img: go, name: 'Go', color: '#00ADD8' },
-]

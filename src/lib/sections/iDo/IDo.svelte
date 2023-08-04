@@ -6,38 +6,52 @@
 	import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
 </script>
 
-<Card --card-padding="0" --card-grid-area='ido'>
-	<h1>What I Do</h1>
+<Card --card-grid-area="ido">
+	<span slot="title">What I Do</span>
 	<div class="list">
 		<div class="item">
 			<h2>Frontend</h2>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aliquam ullam,
-				reprehenderit ipsa ratione deleniti quaerat dolore architecto vitae sequi.
+				I specialize in frontend development using Svelte and React, crafting engaging
+				user interfaces with clean code and modern tools.
 			</p>
 		</div>
 		<div class="item">
 			<h2>Backend</h2>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aliquam ullam,
-				reprehenderit ipsa ratione deleniti quaerat dolore architecto vitae sequi.
+				I excel in building robust backend systems with Golang and implementing RESTful APIs for
+				seamless communication with the frontend.
 			</p>
 		</div>
 		<div class="item">
 			<h2>DevOps</h2>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aliquam ullam,
-				reprehenderit ipsa ratione deleniti quaerat dolore architecto vitae sequi.
+				I am proficient in DevOps practices, designing efficient CI/CD pipelines and managing
+				container orchestration with Kubernetes and HashiCorp Nomad.
 			</p>
 		</div>
 	</div>
 </Card>
 
 <style lang="scss">
-	h1 {
-		font-size: 1.8rem;
-		font-weight: 600;
-		padding: 1.2rem 1.6rem;
-		border-bottom: 1px solid #ffffff14;
+	.list {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 2rem;
+	}
+
+	.item {
+		h2 {
+			font-size: 1.8rem;
+			font-weight: 500;
+			color: $primary-dimmed;
+			margin-bottom: 0.25rem;
+		}
+
+		p {
+			font-size: 1.6rem;
+			line-height: 1.25;
+			color: $text-dimmed;
+		}
 	}
 </style>

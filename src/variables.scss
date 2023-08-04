@@ -24,3 +24,13 @@ $background: #131313;
 $primary: #36FF8B;
 $secondary: #1b1f22;
 $accent: #528DB7;
+$divider: #fefdf920;
+
+$text-dimmed: #fefdf9cc;
+// Darker version of primary
+$primary-dimmed: #2ed17a;
+
+$card-divider: 2px solid $divider;
+$card-padding-x: 1.6rem;
+$card-padding-y: 1.2rem;
+$card-padding: $card-padding-y $card-padding-x;
